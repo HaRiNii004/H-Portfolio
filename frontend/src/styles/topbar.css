@@ -1,0 +1,29 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menu-item {
+  color: white;
+  margin: 0 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-item.active {
+  color: #FFD93D;
+  font-weight: bold;
+}
+
+.menu-item:hover {
+  color: #FFD93D;
+}

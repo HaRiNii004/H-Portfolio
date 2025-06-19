@@ -1,60 +1,25 @@
-/* .scroll-container {
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.horizontal-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   display: flex;
-  height: 100%;
-  flex-direction: row;
-  width: fit-content;
-    overflow-x: scroll;
-  /* overflow-y: hidden; */
-  /* scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none; Firefox */
+  width: 100%;
+}
 
-
-/* .scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome */
-
-/*.section {
+.page {
   min-width: 100vw;
   height: 100vh;
-  scroll-snap-align: start;
-  flex-shrink: 0;
-}
-
-.scroll-wrapper {
-  flex: 0 0 100vw;
-  width: 100vw;
-  height: 100vh;
-
-} */ 
-
-.scroll-wrapper {
-  height: 100vh;
-  /* overflow: hidden; */
-}
-
-.scroll-container {
-  display: flex;
-  width: max-content;
-  height: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-}
-
-.scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-.section {
-  flex: 0 0 100vw;
-  height: 100vh;
-  scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
   font-weight: bold;
-  background-color: #f2f2f2;
-  border-right: 2px solid #ccc;
+  color: white;
 }
+

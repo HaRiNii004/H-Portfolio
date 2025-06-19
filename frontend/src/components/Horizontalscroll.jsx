@@ -1,91 +1,37 @@
+import React, { useRef , useEffect } from "react";
+import { motion, useScroll, useTransform , useAnimation } from "framer-motion";
+import "../styles/Horizontalscroll.css";
 
-// import React, { useRef, useEffect, useState } from 'react';
-// import '../styles/Horizontalscroll.css';
+const HorizontalScroll = ({ pages, activePage}) => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
 
-// import Home from '../pages/Home';
-// import About from '../pages/About';
-// import Skills from '../pages/Skills';
-// import Projects from '../pages/Projects';
-// import Contact from '../pages/Contact';
-
-// const pages = [Home, About, Skills, Projects, Contact];
-
-// const HorizontalScroll = () => {
-//   const scrollRef = useRef();
-
-//   const onWheel = (e) => {
-//     if (!scrollRef.current || e.deltaY === 0) return;
-//     e.preventDefault();
-//      container.scrollLeft += e.deltaY * 0.5;
-    // scrollRef.current.scrollBy({
-    //   right: e.deltaY,
-    //   behavior: 'smooth',
-    // });
-//   };
-
-//   useEffect(() => {
-//     const ref = scrollRef.current;
-//     if (ref) {
-//       ref.addEventListener('wheel', onWheel, { passive: false });
-//     }
-//     return () => {
-//       if (ref) {
-//         ref.removeEventListener('wheel', onWheel);
-//       }
-//     };
-//   }, []);
-//   return (
-//     <div className="scroll-wrapper">
-//       <div className="scroll-container" ref={scrollRef}>
-//         {pages.map((PageComponent, index) => (
-//           <div className="section" key={index}>
-//             <PageComponent />
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HorizontalScroll;
-
-import React, { useRef, useEffect } from 'react';
-import '../styles/Horizontalscroll.css'; // Make sure the path is correct
-
-const sections = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
-
-const HorizontalScroll = () => {
-  const scrollRef = useRef();
-
-  const onWheel = (e) => {
-    if (!scrollRef.current) return;
-    e.preventDefault();
-    scrollRef.current.scrollLeft += e.deltaY;
-  };
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${(pages.length - 1) * 100}vw`]);
+  const controls = useAnimation();
 
   useEffect(() => {
-    const ref = scrollRef.current;
-    if (ref) {
-      ref.addEventListener('wheel', onWheel, { passive: false });
-    }
-    return () => {
-      if (ref) {
-        ref.removeEventListener('wheel', onWheel);
-      }
-    };
-  }, []);
+    controls.start({
+      x: `-${activePage * 100}vw`,
+      transition: { duration: 0.5 }
+    });
+  }, [activePage, controls]);
 
   return (
-    <div className="scroll-wrapper">
-      <div className="scroll-container" ref={scrollRef}>
-        {sections.map((label, index) => (
-          <div className="section" key={index}>
-            <h1>{label}</h1>
+    <div ref={containerRef} className="container" style={{ height: `${pages.length * 100}vh` }}>
+      <motion.div className="horizontal-container" style={{ x }}>
+        {pages.map((page, index) => (
+          <div className="page" id={page.id} key={index} style={{ backgroundColor: page.color }}>
+            {page.content}
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
 
+// ✅ Correct export
 export default HorizontalScroll;
+
