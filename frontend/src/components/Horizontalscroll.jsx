@@ -1,29 +1,40 @@
-import React, { useRef , useEffect } from "react";
-import { motion, useScroll, useTransform , useAnimation } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import "../styles/Horizontalscroll.css";
 
-const HorizontalScroll = ({ pages, activePage}) => {
+const HorizontalScroll = ({ pages }) => {
   const containerRef = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${(pages.length - 1) * 100}vw`]);
-  const controls = useAnimation();
-
-  useEffect(() => {
-    controls.start({
-      x: `-${activePage * 100}vw`,
-      transition: { duration: 0.5 }
-    });
-  }, [activePage, controls]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", `-${(pages.length - 1) * 100}vw`]
+  );
 
   return (
-    <div ref={containerRef} className="container" style={{ height: `${pages.length * 100}vh` }}>
+    <div
+      ref={containerRef}
+      className="container"
+      style={{ height: `${pages.length * 100}vh` }}
+    >
       <motion.div className="horizontal-container" style={{ x }}>
         {pages.map((page, index) => (
-          <div className="page" id={page.id} key={index} style={{ backgroundColor: page.color }}>
+          <div
+            className="page"
+            id={page.id}
+            key={index}
+            style={{
+              backgroundColor: page.color,
+              width: "100vw",
+              height: "100vh",
+              flexShrink: 0,
+            }}
+          >
             {page.content}
           </div>
         ))}
@@ -32,6 +43,4 @@ const HorizontalScroll = ({ pages, activePage}) => {
   );
 };
 
-// ✅ Correct export
 export default HorizontalScroll;
-
