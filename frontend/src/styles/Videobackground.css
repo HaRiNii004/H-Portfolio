@@ -1,6 +1,8 @@
 .home-container {
   position: relative;
   min-height: 100vh;
+  width: 100vw;
+  display: flex;
 }
 
 .half-circle {
@@ -35,7 +37,6 @@
 
 /* Image Styling */
 .profile-image {
-  width: 280px;
   height: 650px;
   object-fit: cover;
   position: absolute;
@@ -82,6 +83,7 @@
     transform: translateY(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0%);
     opacity: 1;
@@ -104,7 +106,8 @@
   color: #fff;
   background-color: #a09d9d;
   border-radius: 12px;
-opacity: 0; /* initial state */
+  opacity: 0;
+  /* initial state */
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.9s;
 }
@@ -117,8 +120,10 @@ opacity: 0; /* initial state */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(30px); /* starts slightly lower */
+    transform: translateY(30px);
+    /* starts slightly lower */
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -142,12 +147,18 @@ opacity: 0; /* initial state */
   margin: 10px 10;
 }
 
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+  flex: 1;
+}
+
 .para-text {
-  max-width: 300px;
-  font-size: 1rem;
-  color: #a09d9d;
-  text-align: left;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 1.2s;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
 }
