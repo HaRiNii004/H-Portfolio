@@ -18,7 +18,9 @@ const Home = () => {
 
   return (
     <>
+
       <div className="home-container">
+                      {/* <p className ="para-text">Engineering undergraduate student interseted in web development and problem solving</p>  */}
 
         <div className={`half-circle ${animate ? 'slide-up' : ''}`} />
         <img src={profileImg} alt="Profile" className="profile-image" />
@@ -31,7 +33,6 @@ const Home = () => {
           </a>
         </div>
 
-        <p className ="para-text">Engineering undergraduate student interseted in web development and problem solving</p> 
 
 
 

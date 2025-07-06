@@ -1,0 +1,74 @@
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4rem 6rem;
+  width: 100%;
+  background-color: #000; /* Match your background */
+  height: 100vh;
+  box-sizing: border-box;
+    position: relative;
+
+}
+
+.about-title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  z-index: 0;
+    position: relative;
+      /* animation: slideDown 1s ease-out forwards; */
+
+
+}
+
+.about-box {
+  position: absolute; /* ⬅️ allows placement over the title */
+  top: 8rem;           /* ⬅️ adjust based on how far below the title you want */
+  left: 11rem;          /* ⬅️ matches the left padding of the section */
+  width: 50%;
+  height: 60%;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #e5e7eb;
+  font-size: 1.2rem;
+  line-height: 3.5rem;
+  background: transparent;
+  box-sizing: border-box;
+  z-index: 1; /* Bring it above the title */
+  /* animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0; */
+}
+
+/* @keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+/* @keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 1s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+} */
