@@ -1,7 +1,9 @@
 
 .container {
   position: relative;
-  width: 100%;
+  width: 500vw;
+  height: 100vh;
+  display: flex;
 }
 
 .horizontal-container {

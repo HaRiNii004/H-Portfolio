@@ -1,12 +1,8 @@
 .about-section {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 4rem 6rem;
-  width: 100%;
-  background-color: #000; /* Match your background */
+  width: 100vw;
+  background-color: #e1d0d0; /* Match your background */
   height: 100vh;
-  box-sizing: border-box;
     position: relative;
 
 }
@@ -15,7 +11,8 @@
   font-size: 5rem;
   font-weight: bold;
   color: white;
-  margin: 0;
+     padding: 4rem 6rem; 
+
   z-index: 0;
     position: relative;
       /* animation: slideDown 1s ease-out forwards; */
@@ -24,9 +21,9 @@
 }
 
 .about-box {
-  position: absolute; /* ⬅️ allows placement over the title */
-  top: 8rem;           /* ⬅️ adjust based on how far below the title you want */
-  left: 11rem;          /* ⬅️ matches the left padding of the section */
+  position: absolute; 
+  top: 8rem;           
+  left: 11rem;          
   width: 50%;
   height: 60%;
   padding: 2rem;
