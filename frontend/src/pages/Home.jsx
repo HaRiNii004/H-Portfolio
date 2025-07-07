@@ -55,7 +55,7 @@ const Home = () => {
             View CV
           </motion.a>
         </div>
-        <div style={{ backgroundColor: "green", flex: "1" }}>
+        <div style={{  flex: "1" }}>
         </div>
       </div>
     </>

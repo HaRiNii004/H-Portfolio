@@ -40,7 +40,6 @@
 .read-the-docs {
   color: #888;
 } */
-@import "tailwindcss";
 
 
 *{
@@ -50,10 +49,4 @@
   box-sizing: border-box;
 }
 
-/* section {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  flex-shrink: 0;
-} */
 

@@ -1,0 +1,35 @@
+/* src/components/PageNavigator.css */
+
+.circle-btn {
+    position: fixed;
+    bottom: 50%;
+    transform: translateY(50%);
+    background-color: #f97316;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.circle-btn:hover {
+    background-color: #e85d04;
+    transform: translateY(50%) scale(1.1);
+
+}
+
+.left-btn {
+    left: 30px;
+}
+
+.right-btn {
+    right: 30px;
+}

@@ -1,29 +1,35 @@
-.about-section {
+.about-container {
   display: flex;
-  width: 100vw;
-  background-color: #e1d0d0; /* Match your background */
+  position: relative;
+
   height: 100vh;
-    position: relative;
+  width: 100vw;
+  background-color: #e1d0d0;
+
 
 }
+
+.about-section {
+  display: flex;
+  flex: 0.6;
+
+}
+
+
 
 .about-title {
   font-size: 5rem;
   font-weight: bold;
   color: white;
-     padding: 4rem 6rem; 
-
+  padding: 4rem 6rem;
   z-index: 0;
-    position: relative;
-      /* animation: slideDown 1s ease-out forwards; */
-
-
+  position: relative;
 }
 
 .about-box {
-  position: absolute; 
-  top: 8rem;           
-  left: 11rem;          
+  position: absolute;
+  top: 8rem;
+  left: 11rem;
   width: 50%;
   height: 60%;
   padding: 2rem;
@@ -33,39 +39,33 @@
   line-height: 3.5rem;
   background: transparent;
   box-sizing: border-box;
-  z-index: 1; /* Bring it above the title */
-  /* animation: slideUp 1s ease-out forwards;
-  animation-delay: 0.3s;
-  opacity: 0; */
+  z-index: 1;
 }
 
-/* @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
-
-/* @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.about-right-image {
+  flex: 0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
-.animate-slideDown {
-  animation: slideDown 1s ease-out forwards;
+
+.about-right-image img {
+  width: 90%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    border: 4px solid white;
+    transition: transform 0.3s ease;
+  cursor: pointer;
+
+  
+
 }
 
-.animate-slideUp {
-  animation: slideUp 1s ease-out forwards;
-  animation-delay: 0.3s;
-} */
+.about-right-image img:hover {
+    transform:  scale(.1);
+}
